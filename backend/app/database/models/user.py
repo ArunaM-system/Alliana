@@ -1,8 +1,8 @@
-"""User model for authentication and identity."""
+"""User model for authentication and identity with tenant partitioning."""
 from sqlalchemy import Column, Integer, String
-from app.database.base import Base
+from app.database.base import Base, TenantMixin
 
-class User(Base):
+class User(Base, TenantMixin):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
