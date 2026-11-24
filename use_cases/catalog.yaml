@@ -1,0 +1,258 @@
+# ALLINA Master Use Case Catalogue (45 Use Cases)
+# Catalog of all approved use cases mapped to specialist agents (A1 - A12)
+# Shared use cases: UC-24 (A1 & A11), UC-43 (A1 & A12) - implemented once and reused.
+
+version: "1.0"
+platform: "ALLINA"
+
+use_cases:
+  # A1: Service Desk Agent
+  - id: "UC-02"
+    name: "Level 1 / Level 2 Support"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "First-contact resolution, triage, and standard user support workflows."
+  - id: "UC-04"
+    name: "End-User Support"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Direct assistance for hardware, client software, and peripheral issues."
+  - id: "UC-07"
+    name: "Service Management"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Incident and request lifecycle tracking and SLA monitoring."
+  - id: "UC-08"
+    name: "Request Management"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Standard service catalog requests, approvals, and fulfilment."
+  - id: "UC-09"
+    name: "IT Support"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "General IT inquiry processing and assistance routing."
+  - id: "UC-24"
+    name: "Self-Service Application Management"
+    primary_agent: "A1_service_desk"
+    shared_with: ["A11_devops_platform"]
+    shared: true
+    description: "Shared self-service portal for application lifecycle actions."
+  - id: "UC-25"
+    name: "Mobile Self-Service"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Mobile-first interaction layer for IT ticketing and status."
+  - id: "UC-26"
+    name: "Voice Self-Service"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Voice-driven automated self-service inquiry and action execution."
+  - id: "UC-27"
+    name: "Voice-Assisted ITSM"
+    primary_agent: "A1_service_desk"
+    shared: false
+    description: "Voice input transcription and automatic ITSM ticket creation/updating."
+  - id: "UC-43"
+    name: "Integrated Service Management"
+    primary_agent: "A1_service_desk"
+    shared_with: ["A12_employee_services"]
+    shared: true
+    description: "Cross-functional service management bridging IT and enterprise workflows."
+
+  # A2: Knowledge Agent
+  - id: "UC-05"
+    name: "Knowledge Repository"
+    primary_agent: "A2_knowledge"
+    shared: false
+    description: "Semantic search, grounded Q&A, and knowledge article lifecycle."
+
+  # A3: Triage Agent
+  - id: "UC-01"
+    name: "Monitoring Alerts"
+    primary_agent: "A3_triage"
+    shared: false
+    description: "Alert deduplication, correlation, and initial noise reduction."
+  - id: "UC-16"
+    name: "Application Monitoring"
+    primary_agent: "A3_triage"
+    shared: false
+    description: "Application health checks and metric anomaly routing."
+  - id: "UC-28"
+    name: "Application Log Monitoring"
+    primary_agent: "A3_triage"
+    shared: false
+    description: "Automated log tailing, pattern matching, and alert classification."
+  - id: "UC-34"
+    name: "Auto-Ticket Triage"
+    primary_agent: "A3_triage"
+    shared: false
+    description: "Intelligent incident routing to responsible teams based on context."
+
+  # A4: Investigation Agent (AI SRE)
+  - id: "UC-03"
+    name: "Level 3 Technical Support"
+    primary_agent: "A4_investigation"
+    shared: false
+    description: "Deep technical diagnostics and advanced infrastructure troubleshooting."
+  - id: "UC-35"
+    name: "AI-Assisted Incident Resolution"
+    primary_agent: "A4_investigation"
+    shared: false
+    description: "Hypothesis generation and diagnostic plan formulation for outages."
+  - id: "UC-42"
+    name: "Root Cause Analysis"
+    primary_agent: "A4_investigation"
+    shared: false
+    description: "Post-incident analysis, timeline reconstruction, and RCA generation."
+
+  # A5: Identity & Access Agent
+  - id: "UC-11"
+    name: "Password Reset / Account Unlock"
+    primary_agent: "A5_identity_access"
+    shared: false
+    description: "Automated identity verification, password resets, and account unlocks."
+  - id: "UC-12"
+    name: "User Onboarding / Offboarding"
+    primary_agent: "A5_identity_access"
+    shared: false
+    description: "Governed provisioning and deprovisioning of accounts and access."
+
+  # A6: Provisioning & Configuration Agent
+  - id: "UC-13"
+    name: "VM Provisioning"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Automated virtual machine lifecycle provisioning via IaC."
+  - id: "UC-15"
+    name: "VM Configuration"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Automated OS and software configuration management."
+  - id: "UC-29"
+    name: "Snapshot Management"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Scheduled and on-demand VM snapshot creation, retention, and cleanup."
+  - id: "UC-30"
+    name: "Template Management"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Golden image template catalog management and distribution."
+  - id: "UC-31"
+    name: "VM Image Management"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Image hardening, vulnerability scanning, and versioning."
+  - id: "UC-44"
+    name: "Multi-Cloud Deployment with IaC"
+    primary_agent: "A6_provisioning_config"
+    shared: false
+    description: "Terraform/OpenTofu governed infrastructure deployment across clouds."
+
+  # A7: Remediation Agent
+  - id: "UC-20"
+    name: "End-User Issue Remediation"
+    primary_agent: "A7_remediation"
+    shared: false
+    description: "Automated script execution to fix common end-user device issues."
+  - id: "UC-21"
+    name: "Network Issue Remediation"
+    primary_agent: "A7_remediation"
+    shared: false
+    description: "Automated switch port bounce, DNS flush, and network healing."
+  - id: "UC-22"
+    name: "Server Issue Remediation"
+    primary_agent: "A7_remediation"
+    shared: false
+    description: "Disk cleanup, memory flushing, and standard OS runbook execution."
+  - id: "UC-23"
+    name: "Backup Monitoring & Remediation"
+    primary_agent: "A7_remediation"
+    shared: false
+    description: "Failed backup detection and automated job restart."
+  - id: "UC-33"
+    name: "Service / Process / Server Restart"
+    primary_agent: "A7_remediation"
+    shared: false
+    description: "Policy-governed service and system restarts with rollback safeguards."
+
+  # A8: Patch & Security Posture Agent
+  - id: "UC-18"
+    name: "Real-Time Upgrades"
+    primary_agent: "A8_patch_security"
+    shared: false
+    description: "Live hotfix application and zero-downtime package upgrades."
+  - id: "UC-19"
+    name: "Application & OS Patch Management"
+    primary_agent: "A8_patch_security"
+    shared: false
+    description: "Patch scheduling, pre-patch validation, roll-out, and verification."
+  - id: "UC-32"
+    name: "Security Baselining & Monitoring"
+    primary_agent: "A8_patch_security"
+    shared: false
+    description: "CIS benchmark compliance scanning and deviation alerting."
+
+  # A9: Capacity & FinOps Agent
+  - id: "UC-17"
+    name: "On-Demand Auto-Scaling"
+    primary_agent: "A9_capacity_finops"
+    shared: false
+    description: "Horizontal and vertical compute scaling based on resource thresholds."
+  - id: "UC-36"
+    name: "Multi-Cloud Metering & Governance"
+    primary_agent: "A9_capacity_finops"
+    shared: false
+    description: "Cloud consumption tracking, cost attribution, and budget guardrails."
+  - id: "UC-37"
+    name: "AI-Based Auto-Scaling"
+    primary_agent: "A9_capacity_finops"
+    shared: false
+    description: "Predictive workload scaling driven by historical metrics."
+
+  # A10: Data & Reporting Agent
+  - id: "UC-10"
+    name: "AI-Assisted Reporting"
+    primary_agent: "A10_data_reporting"
+    shared: false
+    description: "Natural-language query generation for operational dashboards."
+  - id: "UC-14"
+    name: "Database Queries & Reports"
+    primary_agent: "A10_data_reporting"
+    shared: false
+    description: "Governed read-only execution of analytical SQL queries."
+  - id: "UC-38"
+    name: "Report Automation"
+    primary_agent: "A10_data_reporting"
+    shared: false
+    description: "Scheduled compilation and distribution of executive and operational reports."
+
+  # A11: DevOps & Platform Agent
+  - id: "UC-39"
+    name: "Cloud Platform Service Automation"
+    primary_agent: "A11_devops_platform"
+    shared: false
+    description: "Automated provisioning of managed cloud services (RDS, S3, VPC)."
+  - id: "UC-40"
+    name: "DevOps Workflow Automation"
+    primary_agent: "A11_devops_platform"
+    shared: false
+    description: "Automating branch creation, build triggering, and release coordination."
+  - id: "UC-41"
+    name: "DevOps Workflow Management"
+    primary_agent: "A11_devops_platform"
+    shared: false
+    description: "Managing CI/CD pipeline states, approvals, and environments."
+  - id: "UC-45"
+    name: "Application Catalog"
+    primary_agent: "A11_devops_platform"
+    shared: false
+    description: "Developer self-service application templates and deployment definitions."
+
+  # A12: Employee Services Agent
+  - id: "UC-06"
+    name: "Travel Management"
+    primary_agent: "A12_employee_services"
+    shared: false
+    description: "Corporate travel booking, policy validation, and approval workflows."

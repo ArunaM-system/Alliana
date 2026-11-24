@@ -1,0 +1,2 @@
+# Pyrefly Language Server & Linter Configuration for ALLINA
+search-path = ["backend"]
